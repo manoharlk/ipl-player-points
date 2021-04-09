@@ -33,7 +33,7 @@ export default function LeaderBoard({ players, lastScraped }) {
       <div>
         Actual LeaderBoard
         <div>Last scraped: {lastScraped}</div>
-        {players.map((player) => (
+        {players && players.map((player) => (
           <div>
             {player.name} {player.points}
           </div>
