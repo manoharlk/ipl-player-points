@@ -15,13 +15,15 @@ export default function LeaderBoard({ players, lastScraped }) {
     );
   });
 
+  participants.sort((p1, p2) => p2.totalPoints - p1.totalPoints)
+
   return (
     <div>
       {participants.map((participant) => (
         <div>
-          <div>
+          <h3>
             {participant.name} {participant.totalPoints}
-          </div>
+          </h3>
           {participant.players.map((player) => (
             <div>
               {player.name} {player.points}
@@ -31,13 +33,13 @@ export default function LeaderBoard({ players, lastScraped }) {
       ))}
 
       <div>
-        Actual LeaderBoard
-        <div>Last scraped: {lastScraped}</div>
+        <h2>Actual LeaderBoard</h2>
         {players && players.map((player) => (
-          <div>
+            <div>
             {player.name} {player.points}
           </div>
         ))}
+        <div>Last scraped: {lastScraped}</div>
       </div>
     </div>
   );
