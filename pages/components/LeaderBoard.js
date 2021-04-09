@@ -3,21 +3,25 @@ import React from "react";
 export default function LeaderBoard({ players, lastScraped }) {
   const participants = getParticipants();
 
-  participants.forEach(participant => {
-      let count = 0
-      participant.players.forEach(player => {
-          player.points = getPoints(players, player.name)
-          count += parseFloat(player.points) || 0
-        })
-        participant.totalPoints = count
-      participant.players.sort((player1, player2) => player2.points - player1.points)
-  })
+  participants.forEach((participant) => {
+    let count = 0;
+    participant.players.forEach((player) => {
+      player.points = getPoints(players, player.name);
+      count += parseFloat(player.points) || 0;
+    });
+    participant.totalPoints = count;
+    participant.players.sort(
+      (player1, player2) => player2.points - player1.points
+    );
+  });
 
   return (
     <div>
       {participants.map((participant) => (
         <div>
-          <div>{participant.name} {participant.totalPoints}</div>
+          <div>
+            {participant.name} {participant.totalPoints}
+          </div>
           {participant.players.map((player) => (
             <div>
               {player.name} {player.points}
@@ -40,8 +44,11 @@ export default function LeaderBoard({ players, lastScraped }) {
 }
 
 function getPoints(players, name) {
-    const player = players.find((x) => x.name == name);
-  return player? player.points : 0;
+  if (!players) {
+    return 0;
+  }
+  const player = players.find((x) => x.name == name);
+  return player ? player.points : 0;
 }
 
 function getParticipants() {
