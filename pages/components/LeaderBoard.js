@@ -59,7 +59,7 @@ function getParticipants() {
       name: "Manohar",
       players: [
         { name: "Chris Morris", points: 0 },
-        { name: "Andre Russel", points: 0 },
+        { name: "Andre Russell", points: 0 },
         { name: "Kieron Pollard", points: 0 },
         { name: "Rohit Sharma", points: 0 },
         { name: "Kedar Jadhav", points: 0 },
