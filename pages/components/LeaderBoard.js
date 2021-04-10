@@ -80,7 +80,7 @@ function getParticipants() {
       players: [
         { name: "Suryakumar Yadav", points: 0 },
         { name: "Shakib Al Hasan", points: 0 },
-        { name: "Kyle Jaimeson", points: 0 },
+        { name: "Kyle Jamieson", points: 0 },
         { name: "Nicholas Pooran", points: 0 },
         { name: "David Warner", points: 0 },
         { name: "Varun Chakraborty", points: 0 },
