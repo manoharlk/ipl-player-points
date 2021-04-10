@@ -99,7 +99,7 @@ function getParticipants() {
         { name: "Devdutt Padikkal", points: 0 },
         { name: "Kagiso Rabada", points: 0 },
         { name: "Jasprit Bumrah", points: 0 },
-        { name: "Prithwi Shaw", points: 0 },
+        { name: "Prithvi Shaw", points: 0 },
         { name: "Shardul Thakur", points: 0 },
         { name: "Jos Buttler", points: 0 },
         { name: "Washington Sundar", points: 0 },
