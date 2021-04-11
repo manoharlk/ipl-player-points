@@ -86,7 +86,7 @@ function getParticipants() {
         { name: "Varun Chakravarthy", points: 0 },
         { name: "Trent Boult", points: 0 },
         { name: "Manish Pandey", points: 0 },
-        { name: "Bhuvneshwar kumar", points: 0 },
+        { name: "Bhuvneshwar Kumar", points: 0 },
         { name: "Ravi Bishnoi", points: 0 },
         { name: "Nitish Rana", points: 0 },
         { name: "Faf Du Plessis", points: 0 },
