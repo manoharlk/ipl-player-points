@@ -4,18 +4,26 @@ export default function LeaderBoard({ players, lastScraped }) {
   const participants = getParticipants();
 
   participants.forEach((participant) => {
-    let count = 0;
-    participant.players.forEach((player) => {
+    participant.players.forEach(player => {
       player.points = getPoints(players, player.name);
-      count += parseFloat(player.points) || 0;
     });
-    participant.totalPoints = count;
+
     participant.players.sort(
       (player1, player2) => player2.points - player1.points
     );
+
+    let count = 0;
+    participant.players.forEach((player, index) => {
+      if (index > 10) {
+        player.inactive = true;
+      } else {
+        count += parseFloat(player.points) || 0;
+      }
+    });
+    participant.totalPoints = count;
   });
 
-  participants.sort((p1, p2) => p2.totalPoints - p1.totalPoints)
+  participants.sort((p1, p2) => p2.totalPoints - p1.totalPoints);
 
   return (
     <div>
@@ -24,21 +32,24 @@ export default function LeaderBoard({ players, lastScraped }) {
           <h3>
             {participant.name} {participant.totalPoints}
           </h3>
-          {participant.players.map((player) => (
-            <div>
-              {player.name} {player.points}
-            </div>
-          ))}
+          <ol>
+            {participant.players.map((player) => (
+              <li style={{ color: player.inactive ? "grey" : "black" }}>
+                {player.name} {player.points}
+              </li>
+            ))}
+          </ol>
         </div>
       ))}
 
       <div>
         <h2>Actual LeaderBoard</h2>
-        {players && players.map((player) => (
+        {players &&
+          players.map((player) => (
             <div>
-            {player.name} {player.points}
-          </div>
-        ))}
+              {player.name} {player.points}
+            </div>
+          ))}
         <div>Last scraped: {lastScraped}</div>
       </div>
     </div>
