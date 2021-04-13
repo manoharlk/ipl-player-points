@@ -130,7 +130,7 @@ function getParticipants() {
         { name: "Hardik Pandya", points: 0 },
         { name: "Ruturaj Gaikwad", points: 0 },
         { name: "Rahul Tewatia", points: 0 },
-        { name: "Mohammed Shami", points: 0 },
+        { name: "Mohammad Shami", points: 0 },
         { name: "Kane Williamson", points: 0 },
         { name: "Eoin Morgan", points: 0 },
         { name: "Yuzvendra Chahal", points: 0 },
