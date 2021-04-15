@@ -5,7 +5,7 @@ export default function LeaderBoard({ players, lastScraped }) {
 
   participants.forEach((participant) => {
     participant.players.forEach(player => {
-      player.points = getPoints(players, player.name);
+      player.points += getPoints(players, player.name);
     });
 
     participant.players.sort(
@@ -61,7 +61,7 @@ function getPoints(players, name) {
     return 0;
   }
   const player = players.find((x) => x.name == name);
-  return player ? player.points : 0;
+  return player ? parseFloat(player.points) : 0;
 }
 
 function getParticipants() {
@@ -148,9 +148,8 @@ function getParticipants() {
         { name: "Rahul Chahar", points: 0 },
         { name: "Chris Gayle", points: -12.5 },
         { name: "Riley Meredith", points: 0 },
-        { name: "Kartik Tyagi", points: 0 },
-        { name: "Chris Gayle", points: 0 },
-      ],
+        { name: "Kartik Tyagi", points: 0 }
+      ]
     },
     {
       name: "Mahesh",
