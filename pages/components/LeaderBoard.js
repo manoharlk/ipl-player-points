@@ -149,6 +149,7 @@ function getParticipants() {
         { name: "Ben Stokes", points: 0 },
         { name: "Riley Meredith", points: 0 },
         { name: "Kartik Tyagi", points: 0 },
+        { name: "Chris Gayle", points: 0 },
       ],
     },
     {
