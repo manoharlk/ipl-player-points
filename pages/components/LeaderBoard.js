@@ -60,7 +60,7 @@ function getPoints(players, name) {
   if (!players) {
     return 0;
   }
-  const player = players.find((x) => x.name == name);
+  const player = players.find((x) => x?.name.toLowerCase() == name?.toLowerCase());
   return player ? parseFloat(player.points) : 0;
 }
 
