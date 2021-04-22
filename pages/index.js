@@ -48,7 +48,7 @@ export async function getServerSideProps() {
       });
     });
 
-  console.log(players);
+  // console.log(players);
 
   const lastScraped = new Date().toISOString();
   return {

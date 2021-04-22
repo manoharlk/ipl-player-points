@@ -24,7 +24,9 @@ export default function LeaderBoard({ players, lastScraped }) {
   });
 
   participants.sort((p1, p2) => p2.totalPoints - p1.totalPoints);
-  players.sort((p1, p2) => p2.points - p1.points);
+  if (players && players.length > 0) {
+    players.sort((p1, p2) => p2.points - p1.points);
+  }
 
   return (
     <div>

@@ -35,7 +35,7 @@ export async function getServerSideProps() {
 
   const playerRows = $(".top-players .js-row").toArray();
 
-  playerRows.forEach((playerR) => {
+  playerRows && playerRows.forEach((playerR) => {
     const playerEl = $(playerR).find(".top-players__player-name");
     let name = playerEl && playerEl.text().trim();
     name = name && name.replace(/(\s+)/g, " ");
