@@ -138,7 +138,7 @@ function getParticipants() {
     {
       name: "Chunchu",
       players: [
-        { name: "KL Rahul", points: 0 },
+        { name: "Lokesh Rahul", points: 0 },
         { name: "Quinton De Kock", points: 0 },
         { name: "AB de Villiers", points: 0 },
         { name: "Hardik Pandya", points: 0 },
