@@ -97,7 +97,7 @@ function getParticipants() {
         { name: "Kyle Jamieson", points: 0 },
         { name: "Nicholas Pooran", points: 0 },
         { name: "David Warner", points: 0 },
-        { name: "Varun Chakaravarthy", points: 0 },
+        { name: "Varun Chakravarthy", points: 0 },
         { name: "Trent Boult", points: 0 },
         { name: "Manish Pandey", points: 0 },
         { name: "Bhuvneshwar Kumar", points: 0 },
