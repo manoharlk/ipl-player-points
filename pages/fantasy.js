@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
-import NextLink from "next/link";
 import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
 import LeaderBoard from "./components/LeaderBoard";
-
+import NextLink from "next/link";
 import axios from "axios";
+import cheerio from "cheerio";
 
-export default function Index(props) {
+export default function Fantasy(props) {
   return (
     <Container maxWidth="sm">
       <Box mt={2}>
         <Link>
-          <NextLink href="/fantasy">
-            <a>Old Mvp LeaderBoard</a>
+          <NextLink href="/">
+            <a>Back to Main LeaderBoard</a>
           </NextLink>
         </Link>
       </Box>
+
       <Box my={4}>
         <LeaderBoard players={props.players} lastScraped={props.lastScraped} />
       </Box>
@@ -26,30 +27,27 @@ export default function Index(props) {
 
 export async function getServerSideProps() {
   const { data } = await axios.get(
-    "https://fantasy.iplt20.com/season/services/feed/player/stats",
-    {
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json;charset=utf-8",
-        "User-Agent": "PostmanRuntime/7.24.1",
-      },
-    }
+    "https://www.iplt20.com/stats/2021/player-points"
   );
-
-  let playersStats = data?.Data?.Value?.PlayerStats;
+  const $ = cheerio.load(data);
 
   let players = [];
 
-  playersStats &&
-    playersStats.forEach((player) => {
-      players.push({
-        name: player.plyrnm,
-        points: parseFloat(player.ovrpoint),
-      });
+  const playerRows = $(".top-players .js-row").toArray();
+
+  playerRows.forEach((playerR) => {
+    const playerEl = $(playerR).find(".top-players__player-name");
+    let name = playerEl && playerEl.text().trim();
+    name = name && name.replace(/(\s+)/g, " ");
+    const points =
+      $(playerR) && $(playerR).find(".top-players__pts").text().trim();
+    players.push({
+      name,
+      points,
     });
+  });
 
   console.log(players);
-
   const lastScraped = new Date().toISOString();
   return {
     props: { players, lastScraped },
