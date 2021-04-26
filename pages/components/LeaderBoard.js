@@ -163,7 +163,7 @@ function getParticipants() {
         { name: "Krunal Pandya", points: 0 },
         { name: "Steve Smith", points: 0 },
         { name: "Shimron Hetmyer", points: 0 },
-        { name: "Kane Richardson", points: 0 },
+        { name: "Mohammed Siraj", points: -180.0 },
         { name: "Moeen Ali", points: 0 },
         { name: "Prasidh Krishna", points: 0 },
         { name: "Jonny Bairstow", points: 0 },
