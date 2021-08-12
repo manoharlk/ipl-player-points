@@ -4,13 +4,13 @@ export default function LeaderBoard({ players, lastScraped }) {
   const participants = getParticipants();
 
   participants.forEach(participant => {
-      let count = 0
-      participant.players.forEach(player => {
-          player.points = getPoints(players, player.name)
-          count += parseFloat(player.points) || 0
-        })
-        participant.totalPoints = count
-      participant.players.sort((player1, player2) => player2.points - player1.points)
+    let count = 0
+    participant.players.forEach(player => {
+      player.points = getPoints(players, player.name)
+      count += parseFloat(player.points) || 0
+    })
+    participant.totalPoints = count
+    participant.players.sort((player1, player2) => player2.points - player1.points)
   })
 
   return (
@@ -40,8 +40,8 @@ export default function LeaderBoard({ players, lastScraped }) {
 }
 
 function getPoints(players, name) {
-    const player = players.find((x) => x.name == name);
-  return player? player.points : 0;
+  const player = players.find((x) => x.name == name);
+  return player ? player.points : 0;
 }
 
 function getParticipants() {
