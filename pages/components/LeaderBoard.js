@@ -93,7 +93,7 @@ function getParticipants() {
       name: "Kalyan",
       players: [
         { name: "Suryakumar Yadav", points: 0 },
-        { name: "Shakib Al Hasan", points: 0 },
+        { name: "Jason Roy", points: 0 },
         { name: "Kyle Jamieson", points: 0 },
         { name: "Nicholas Pooran", points: 0 },
         { name: "David Warner", points: 0 },
@@ -145,7 +145,7 @@ function getParticipants() {
         { name: "Ruturaj Gaikwad", points: 0 },
         { name: "Rahul Tewatia", points: 0 },
         { name: "Mohammad Shami", points: 0 },
-        { name: "Kane Williamson", points: 0 },
+        { name: "Dasun Shanaka", points: 4 },
         { name: "Eoin Morgan", points: 0 },
         { name: "Yuzvendra Chahal", points: 0 },
         { name: "Rahul Chahar", points: 0 },
